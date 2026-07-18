@@ -1,0 +1,31 @@
+# LLM
+groq>=0.9.0
+
+# Chainlit UI
+chainlit>=2.0.0
+
+# Vector Database
+chromadb>=0.5.5
+
+# LangChain
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+
+# Embedding Model
+sentence-transformers>=3.0.1
+
+# PDF Processing
+pypdf>=4.2.0
+
+# Environment Variables
+python-dotenv>=1.0.1
+
+# Machine Learning Backend
+torch>=2.3.1
+
+# Numerical Computing
+numpy>=1.26.4
+
+# Tokenizer (optional but recommended)
+tiktoken>=0.7.0

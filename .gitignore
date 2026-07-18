@@ -1,0 +1,24 @@
+# Environments
+venv/
+env/
+.venv/
+.env
+
+# Pycache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Project specific databases/data
+chroma_db/
+parents.db
+data/
+
+# IDEs and Tools
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

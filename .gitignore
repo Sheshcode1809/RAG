@@ -5,7 +5,7 @@ env/
 .env
 
 # Pycache
-__pycache__/
+__pycach
 *.py[cod]
 *$py.class
 

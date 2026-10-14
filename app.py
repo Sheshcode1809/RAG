@@ -43,11 +43,16 @@ async def main(message: cl.Message):
 
     if answer_stream is not None:
         await msg.send()
-        # Stream the tokens word-by-word in real-time
-        async for token in answer_stream:
-            await msg.stream_token(token)
-            full_answer += token
-        await msg.update()
+        try:
+            # Stream the tokens word-by-word in real-time
+            async for token in answer_stream:
+                await msg.stream_token(token)
+                full_answer += token
+            await msg.update()
+        except Exception as e:
+            full_answer = f"⚠️ An error occurred while generating the answer: {e}"
+            msg.content = full_answer
+            await msg.update()
     else:
         # Static fallback answer (e.g. no matching textbooks found)
         full_answer = result.get("answer", "No response generated.")

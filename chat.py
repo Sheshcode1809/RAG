@@ -16,6 +16,8 @@ async_client = AsyncGroq(
     api_key=os.getenv("GROQ_API_KEY")
 )
 
+MODEL_NAME = os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b")
+
 # Custom sliding window memory to prevent context window overflow
 class ConversationBufferWindowMemory:
     def __init__(self, k: int = 4):
@@ -72,7 +74,7 @@ Answer:
 
 def ask_llm(prompt):
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=MODEL_NAME,
         messages=[
             {
                 "role": "user",
@@ -86,7 +88,7 @@ def ask_llm(prompt):
 def ask_llm_stream(prompt):
     """Synchronous token streaming (used for CLI/tests)"""
     response_stream = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=MODEL_NAME,
         messages=[
             {
                 "role": "user",
@@ -103,7 +105,7 @@ def ask_llm_stream(prompt):
 async def ask_llm_stream_async(prompt):
     """Asynchronous token streaming (used for Chainlit)"""
     response_stream = await async_client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=MODEL_NAME,
         messages=[
             {
                 "role": "user",

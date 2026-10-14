@@ -5,13 +5,11 @@ env/
 .env
 
 # Pycache
-__pycach
+__pycache__/
 *.py[cod]
 *$py.class
 
-# Project specific databases/data
-chroma_db/
-parents.db
+# Raw data files
 data/
 
 # IDEs and Tools
